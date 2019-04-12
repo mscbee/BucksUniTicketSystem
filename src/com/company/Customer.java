@@ -76,7 +76,12 @@ public class Customer implements CustomerInterface {
     }
 
     public void getProfileInfo(String fName, String lName, String address) {
-
+        try {
+            Thread.sleep(120);
+        }
+        catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Name: " + fName + " " + lName + "\n");
         System.out.println("Address: " + address + "\n");
 

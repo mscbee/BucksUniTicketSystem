@@ -16,7 +16,15 @@ interface CustomerInterface {
 
 interface ShowInterface {
 
-    void selectShow(String showName, String showDate);
+    void selectShow();
 
-    String selectTime();
+    void selectTime();
+}
+
+interface TicketInterface {
+
+    void setPrice(double price);
+
+    void printTicket(String showName, String showDate, String showTime,
+                     int numSeats, String fName, String lName, String address);
 }

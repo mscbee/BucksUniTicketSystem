@@ -27,7 +27,7 @@ public class SystemOutput implements TicketSystemInterfaces {
         for(int i = 0; i < letter.length(); i++) {
             java.lang.System.out.print(letter.charAt(i));
             try {
-                Thread.sleep(60);
+                Thread.sleep(40);
             }
             catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
