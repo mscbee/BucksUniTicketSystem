@@ -6,11 +6,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Customer charlene = new Customer();
+        Customer customer = new Customer();
 
-        charlene.getLogin();
+        customer.getLogin();
 
-        charlene.getProfileInfo("Charlene", "Bee", "123 Disneyland");
+        customer.getProfileInfo("Charlene", "Bee", "123 Disneyland");
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -21,5 +21,6 @@ public class Main {
 
         show.selectTime();
 
+        customer.printTicket("Les Miserables", "21/05/2013", "7pm");
     }
 }

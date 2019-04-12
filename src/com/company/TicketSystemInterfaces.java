@@ -19,12 +19,10 @@ interface ShowInterface {
     void selectShow();
 
     void selectTime();
+
 }
 
 interface TicketInterface {
 
-    void setPrice(double price);
-
-    void printTicket(String showName, String showDate, String showTime,
-                     int numSeats, String fName, String lName, String address);
+    void printTicket(String showName, String showDate, String showTime);
 }

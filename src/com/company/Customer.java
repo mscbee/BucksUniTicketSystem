@@ -3,7 +3,7 @@ package com.company;
 import java.io.Console;
 import java.util.Scanner;
 
-public class Customer implements CustomerInterface {
+public class Customer implements CustomerInterface, TicketInterface {
     private String fName;
     private String lName;
     private String address;
@@ -49,10 +49,8 @@ public class Customer implements CustomerInterface {
         Scanner in = new Scanner(System.in);
         SystemOutput systemOutput = new SystemOutput();
 
-        Console console = System.console();
-
-        systemOutput.type("LOG IN \nWelcome to the Bucks Centre for the Performing Arts ticket purchasing system!\n" );
-        systemOutput.type("Please log in\n");
+        systemOutput.type("LOG IN \n\n\nWelcome to the Bucks Centre for the Performing Arts ticket purchasing system!\n\n" );
+        systemOutput.type("Please log in\n\n");
         systemOutput.type("Enter username:\n");
 
         String username = in.nextLine();
@@ -63,7 +61,7 @@ public class Customer implements CustomerInterface {
             username = in.nextLine();
         }
 
-        systemOutput.type("Enter password:\n");
+        systemOutput.type("\nEnter password:\n");
 
         String password = in.nextLine();
 
@@ -77,13 +75,32 @@ public class Customer implements CustomerInterface {
 
     public void getProfileInfo(String fName, String lName, String address) {
         try {
-            Thread.sleep(120);
+            Thread.sleep(2000);
         }
         catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("Name: " + fName + " " + lName + "\n");
-        System.out.println("Address: " + address + "\n");
+        System.out.println("\n\nName: " + fName + " " + lName + "\n");
+        System.out.println("Address: " + address + "\n\n");
 
+    }
+
+    @Override
+    public void printTicket(String showName, String showDate, String showTime) {
+        try {
+            Thread.sleep(400);
+        }
+        catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        SystemOutput systemOutput = new SystemOutput();
+
+        systemOutput.type("\n --------------------- YOUR TICKETS --------------------- \n");
+        systemOutput.type("\n ========== The Bucks Centre for Performing Arts ========== \n");
+        systemOutput.type("\n ==================== Enjoy the show! ==================== \n\n");
+        systemOutput.type("Show: " +  showName + "\n");
+        systemOutput.type("Date: " + showDate + "\n" );
+        systemOutput.type("Time: " + showTime + "\n" );
     }
 }

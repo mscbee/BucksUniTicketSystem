@@ -48,18 +48,18 @@ public class Show implements ShowInterface {
         SystemOutput systemOutput = new SystemOutput();
 
         try {
-            Thread.sleep(300);
+            Thread.sleep(1500);
         }
         catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        systemOutput.type("SELECT AN UPCOMING SHOW:\n");
-        systemOutput.type("1. Star Wars: The Musical (20/05/2013)\n2. Les Miserables (21/05/2013)\n3. The Phantom of the Opera (22/05/2013)\n ");
+        systemOutput.type("SELECT AN UPCOMING SHOW:\n\n");
+        systemOutput.type("1. Star Wars: The Musical (20/05/2013)\n2. Les Miserables (21/05/2013)\n3. The Phantom of the Opera (22/05/2013)\n");
 
         char ch = in.next().charAt(0);
 
-        while(ch != '1' || ch != '2' || ch != '3') {
+        while(ch != '1' && ch != '2' && ch != '3') {
             systemOutput.type("Please enter a valid show number");
         }
 
@@ -86,18 +86,18 @@ public class Show implements ShowInterface {
         SystemOutput systemOutput = new SystemOutput();
 
         try {
-            Thread.sleep(300);
+            Thread.sleep(1500);
         }
         catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
 
-        systemOutput.type("SELECT AN AVAILABLE TIME FOR THE PERFORMANCE:\n");
-        systemOutput.type("1. 1pm\n 2. 7pm\n");
+        systemOutput.type("\nSELECT AN AVAILABLE TIME FOR THE PERFORMANCE:\n\n");
+        systemOutput.type("1. 1pm\n2. 7pm\n");
 
         char ch = in.next().charAt(0);
 
-        while(ch != '1' || ch != '2') {
+        while(ch != '1' && ch != '2') {
             systemOutput.type("Please choose an available start time");
         }
 
