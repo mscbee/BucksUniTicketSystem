@@ -13,3 +13,10 @@ interface CustomerInterface {
     void getProfileInfo(String fName, String lName, String address);
 
 }
+
+interface ShowInterface {
+
+    void selectShow(String showName, String showDate);
+
+    String selectTime();
+}
